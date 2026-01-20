@@ -1,0 +1,11 @@
+res://scenes/player.tscn
+res://scenes/game.tscn
+res://scenes/player.gd
+res://plaform.tscn
+res://scripts/coin.gd
+res://coin.tscn
+res://scenes/killzone.gd
+res://killzone.tscn
+res://enemi.tscn
+res://scenes/animated_sprite_2d.gd
+res://scenes/enemi.gd

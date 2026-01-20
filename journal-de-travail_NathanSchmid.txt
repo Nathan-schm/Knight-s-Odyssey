@@ -1,0 +1,15 @@
+mardi 13.01.2026
+----------------
+
+45min : trouver quel type de projet faire
+45min : écrire le journal de travail 
+45min : installer Godot, et créer le répo github, créer tout les fichiers de base
+45min : apprendre les bases de godot, et commencer a chercher quel type de map et de personnage utiliser pour mon jeu.
+
+mardi 20.01.2026
+-----------------
+
+45min : J'ai avancer dans le jeu, j'ai créer la map et le personnage,
+45min : J'ai créer des platformes qui bougent, et j'ai ajouter des Pièce qu'on peut prendre
+45min : J'ai fait que quand le personnage tombe, il meurt et le jeu recommence 
+45min : j'ai commencer à créer un énemi, si on vas sur lui le personnag meurt, j'essaye de faire quil se déplace, j'ai pas encore terminé.
