@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://s66075f6xk76"]
+
+[ext_resource type="Script" uid="uid://bojaycuk3516l" path="res://scripts/title_screen.gd" id="1_f0qvy"]
+[ext_resource type="Texture2D" uid="uid://bx36jaybx7v8k" path="res://assets/Sprites/Backgrounds/Default/moonho-seog-title-screen.jpg" id="2_rf8m1"]
+
+[sub_resource type="FontVariation" id="FontVariation_rf8m1"]
+
+[sub_resource type="Theme" id="Theme_qf65s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf8m1"]
+bg_color = Color(0.20699999, 0.3204, 0.45, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkxti"]
+bg_color = Color(0.17, 0.17, 0.17, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwq6f"]
+bg_color = Color(0.13, 0.13, 0.13, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf65s"]
+bg_color = Color(0.4, 0.176, 0.22453335, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vupn"]
+bg_color = Color(0.13, 0.13, 0.13, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j8rq"]
+bg_color = Color(0.13, 0.13, 0.13, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1876, -237)
+script = ExtResource("1_f0qvy")
+
+[node name="MoonhoSeogTitleScreen" type="Sprite2D" parent="."]
+modulate = Color(0.44, 0.44, 0.44, 0.30588236)
+position = Vector2(570.00006, 316.5)
+scale = Vector2(0.6, 0.59537035)
+texture = ExtResource("2_rf8m1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 128.0
+offset_right = 792.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_rf8m1")
+theme_override_font_sizes/font_size = 64
+text = "Platfourmer"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 287.0
+offset_right = 643.0
+offset_bottom = 318.0
+theme = SubResource("Theme_qf65s")
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rf8m1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xkxti")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gwq6f")
+text = "Jouer"
+
+[node name="QuitterButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 330.0
+offset_right = 643.0
+offset_bottom = 361.0
+theme = SubResource("Theme_qf65s")
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qf65s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vupn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2j8rq")
+text = "Quitter"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitterButton" to="." method="_on_quitter_button_pressed"]
+[connection signal="pressed" from="QuitterButton" to="." method="_on_start_button_pressed"]
