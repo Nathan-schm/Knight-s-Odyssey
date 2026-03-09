@@ -16,3 +16,5 @@ Multiple unique worlds with distinct environments
 Enemies: slimes and environmental hazards (spikes)
 A brave knight as your hero
 Boosts jumps
+
+![game footage](img/screen_Odyssey.png)
