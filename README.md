@@ -22,4 +22,4 @@ Boosts jumps
 ![game footage](img/screen_Odyssey.png)
 
 # tileset 
-![tilemap](img/world_tilset.png)
+![tilemap](img/world_tileset.png)
