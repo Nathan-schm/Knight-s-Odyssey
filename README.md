@@ -19,7 +19,9 @@ Boosts jumps
 
 # Download
 Install the 4.5 Godot version
+
 Download the file "knightsOdyssey_game"
+
 Launch the Godot app and select the "project.godot" file.
 Enjoy 😁
 
