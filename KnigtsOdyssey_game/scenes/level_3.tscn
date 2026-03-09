@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://diswxw0lgu6ih"]
+[gd_scene load_steps=27 format=3 uid="uid://diswxw0lgu6ih"]
 
 [ext_resource type="Texture2D" uid="uid://0cjay7yp0dit" path="res://assets/Sprites/spriteieieie/world_tileset.png" id="1_1pn4d"]
 [ext_resource type="Script" uid="uid://cww5tlx85pur8" path="res://scripts/compteur.gd" id="1_p6vls"]
@@ -9,6 +9,9 @@
 [ext_resource type="FontFile" uid="uid://cjwc8gdvhr7iq" path="res://assets/fonts/PixelOperator8.ttf" id="5_hhfj6"]
 [ext_resource type="PackedScene" uid="uid://dolm8t4syb1j0" path="res://scenes/coin.tscn" id="6_hhfj6"]
 [ext_resource type="PackedScene" uid="uid://qxkk28equ8dd" path="res://scenes/platforme_lave.tscn" id="9_ha73p"]
+[ext_resource type="PackedScene" uid="uid://cuio2cvn4pomh" path="res://scenes/pickup_m.tscn" id="10_ax3dk"]
+[ext_resource type="PackedScene" uid="uid://c3f8tulomonup" path="res://scenes/pickup_s.tscn" id="11_q2dsb"]
+[ext_resource type="PackedScene" uid="uid://b87nb18ua0cf1" path="res://pickup.tscn" id="12_p3r0x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wae8j"]
 texture = ExtResource("1_1pn4d")
@@ -241,6 +244,21 @@ size = Vector2(16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha73p"]
 size = Vector2(48, 8)
 
+[sub_resource type="Animation" id="Animation_56dhn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1479, -99)]
+}
+
 [sub_resource type="Animation" id="Animation_vcx5n"]
 resource_name = "haut_bas"
 loop_mode = 2
@@ -257,7 +275,13 @@ tracks/0/keys = {
 "values": [Vector2(-1479, -99), Vector2(-1479, -76)]
 }
 
-[sub_resource type="Animation" id="Animation_56dhn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ax3dk"]
+_data = {
+&"RESET": SubResource("Animation_56dhn"),
+&"haut_bas": SubResource("Animation_vcx5n")
+}
+
+[sub_resource type="Animation" id="Animation_p3r0x"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -269,13 +293,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1479, -99)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ax3dk"]
-_data = {
-&"RESET": SubResource("Animation_56dhn"),
-&"haut_bas": SubResource("Animation_vcx5n")
+"values": [Vector2(-1437, -86)]
 }
 
 [sub_resource type="Animation" id="Animation_q2dsb"]
@@ -292,21 +310,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1437, -86), Vector2(-1437, -101)]
-}
-
-[sub_resource type="Animation" id="Animation_p3r0x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1437, -86)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5xqnf"]
@@ -458,3 +461,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_5xqnf")
 }
 autoplay = "haut_bas"
+
+[node name="pickup_M" parent="." instance=ExtResource("10_ax3dk")]
+position = Vector2(-232, 9)
+
+[node name="pickup_S" parent="." instance=ExtResource("11_q2dsb")]
+position = Vector2(-370, -17)
+
+[node name="pickup_V" parent="." instance=ExtResource("12_p3r0x")]
+position = Vector2(-1850, -146)

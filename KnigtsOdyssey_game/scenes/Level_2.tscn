@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://m6l8hi7jamj6"]
+[gd_scene load_steps=25 format=3 uid="uid://m6l8hi7jamj6"]
 
 [ext_resource type="Script" uid="uid://cffnk83rrtyve" path="res://scenes/main.gd" id="1_181jq"]
 [ext_resource type="Script" uid="uid://cww5tlx85pur8" path="res://scripts/compteur.gd" id="1_knhd3"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dolm8t4syb1j0" path="res://scenes/coin.tscn" id="8_at62m"]
 [ext_resource type="Texture2D" uid="uid://cs0dh7xk440lw" path="res://assets/Sprites/Tiles/Default/block_spikes.png" id="9_0qfqs"]
 [ext_resource type="PackedScene" uid="uid://bkrpwhqbik40k" path="res://scenes/platform_glace.tscn" id="9_if06q"]
+[ext_resource type="PackedScene" uid="uid://b87nb18ua0cf1" path="res://pickup.tscn" id="12_if06q"]
+[ext_resource type="PackedScene" uid="uid://cuio2cvn4pomh" path="res://scenes/pickup_m.tscn" id="13_sx87u"]
 
 [sub_resource type="GDScript" id="GDScript_882eo"]
 
@@ -421,3 +423,12 @@ texture = ExtResource("9_0qfqs")
 
 [node name="Boost" parent="LevelRoot" instance=ExtResource("3_ci4st")]
 position = Vector2(1480, -152)
+
+[node name="pickup_V" parent="." instance=ExtResource("12_if06q")]
+position = Vector2(72, 11)
+
+[node name="pickup_M" parent="." instance=ExtResource("13_sx87u")]
+position = Vector2(808, -87)
+
+[node name="pickup_M2" parent="." instance=ExtResource("13_sx87u")]
+position = Vector2(1335, -150)

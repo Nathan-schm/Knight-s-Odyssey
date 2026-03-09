@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuio2cvn4pomh"]
+
+[ext_resource type="Script" uid="uid://b0eg1noervpcl" path="res://pickup_m.gd" id="1_0q464"]
+[ext_resource type="Texture2D" uid="uid://cmos438gwo1u" path="res://assets/Vector/Tiles/gem_red.svg" id="2_kptoe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_weqpt"]
+radius = 3.0
+
+[node name="pickup_M" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_0q464")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_weqpt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(0.171875, 0.16406254)
+texture = ExtResource("2_kptoe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

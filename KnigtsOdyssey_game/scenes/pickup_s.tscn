@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3f8tulomonup"]
+
+[ext_resource type="Script" uid="uid://cibr5rn2402nd" path="res://scenes/pickup_s.gd" id="1_dtb0u"]
+[ext_resource type="Texture2D" uid="uid://bx5hipx7251ta" path="res://assets/Vector/Tiles/gem_green.svg" id="2_dtb0u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_weqpt"]
+radius = 3.0
+
+[node name="pickup_S" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_dtb0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_weqpt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(0.171875, 0.16406254)
+texture = ExtResource("2_dtb0u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
