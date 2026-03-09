@@ -25,6 +25,6 @@ Download the file "knightsOdyssey_game"
 Launch the Godot app and select the "project.godot" file.
 Enjoy 😁
 
-# Game footage 
+# 🖥️ Game footage 
 ![game footage](img/screen_Odyssey.png)
 
