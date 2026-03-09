@@ -17,7 +17,7 @@ Enemies: slimes and environmental hazards (spikes)
 A brave knight as your hero
 Boosts jumps
 
-# Download
+# ⏳ Download
 Install the 4.5 Godot version
 
 Download the file "knightsOdyssey_game"
