@@ -21,5 +21,3 @@ Boosts jumps
 
 ![game footage](img/screen_Odyssey.png)
 
-# PLayer Percival
-![tilemap](img/percival_.png)
