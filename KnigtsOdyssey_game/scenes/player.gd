@@ -18,6 +18,7 @@ func die():
 	can_move = false
 	velocity = Vector2.ZERO
 	animated_sprite.play("dead")
+	Calcul.reset_to_checkpoint()
 
 func _physics_process(delta):
 	# ajoute la gravité
@@ -74,7 +75,9 @@ func apply_effect(type: String, duration: float) -> void:
 
 		"speed_malus":
 			speed = BASE_SPEED * 0.5
-			_start_effect_timer("speed_malus", duration, func(): speed = BASE_SPEED)
+			jump_velocity = BASE_JUMP_VELOCITY * 0.5
+			_start_effect_timer("speed_malus", duration, func(): speed = BASE_SPEED,)
+			_start_effect_timer("jump_boost", duration, func(): jump_velocity = BASE_JUMP_VELOCITY)
 
 func _start_effect_timer(id: String, duration: float, callback: Callable) -> void:
 	# Si l'effet est déjà actif, on repart de zéro

@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxgjux6nv6oa7"]
+[gd_scene load_steps=17 format=3 uid="uid://dxgjux6nv6oa7"]
 
-[ext_resource type="Script" uid="uid://bojaycuk3516l" path="res://scripts/title_screen.gd" id="1_os6j5"]
+[ext_resource type="Script" uid="uid://c3t4iy6qy87m8" path="res://scenes/screen_fin.gd" id="1_45iu5"]
 [ext_resource type="Texture2D" uid="uid://bqmbeeyew4ihv" path="res://assets/fin.png" id="2_45iu5"]
 [ext_resource type="FontFile" uid="uid://c74cbubwrc35u" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_ddmca"]
 [ext_resource type="FontFile" uid="uid://kyida1c4cb" path="res://assets/fonts/Daydream DEMO.otf" id="4_ddmca"]
+[ext_resource type="FontFile" uid="uid://cjwc8gdvhr7iq" path="res://assets/fonts/PixelOperator8.ttf" id="5_ddmca"]
 
 [sub_resource type="FontVariation" id="FontVariation_rf8m1"]
 
@@ -18,10 +19,8 @@ font = ExtResource("4_ddmca")
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Theme" id="Theme_qf65s"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf8m1"]
-bg_color = Color(0.20699999, 0.3204, 0.45, 1)
+bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -36,11 +35,13 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwq6f"]
-bg_color = Color(0.13, 0.13, 0.13, 1)
+bg_color = Color(0.21, 0.21, 0.21, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_qf65s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf65s"]
 bg_color = Color(0.4, 0.176, 0.22453335, 1)
@@ -64,6 +65,11 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="LabelSettings" id="LabelSettings_hiihb"]
+font_size = 30
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="screen_fin" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -72,7 +78,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1876, -237)
-script = ExtResource("1_os6j5")
+script = ExtResource("1_45iu5")
 
 [node name="Fin" type="Sprite2D" parent="."]
 position = Vector2(715, 180.00002)
@@ -117,12 +123,12 @@ offset_left = 492.0
 offset_top = 287.0
 offset_right = 643.0
 offset_bottom = 318.0
-theme = SubResource("Theme_qf65s")
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("3_ddmca")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rf8m1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xkxti")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gwq6f")
-text = "Rejouer"
+text = "RESTART"
 
 [node name="QuitterButton" type="Button" parent="."]
 layout_mode = 0
@@ -132,11 +138,30 @@ offset_right = 643.0
 offset_bottom = 361.0
 theme = SubResource("Theme_qf65s")
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("3_ddmca")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qf65s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4vupn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2j8rq")
-text = "Quitter"
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.62868553
+anchor_top = 0.041814875
+anchor_right = 0.7789097
+anchor_bottom = 0.09798484
+offset_left = 1.7542543
+offset_top = -0.09603882
+offset_right = -16.304016
+offset_bottom = -5.494177
+theme_override_fonts/font = ExtResource("5_ddmca")
+theme_override_font_sizes/font_size = 8
+text = "00"
+label_settings = SubResource("LabelSettings_hiihb")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuitterButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitterButton" to="." method="_on_quitter_button_pressed"]

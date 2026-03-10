@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://diswxw0lgu6ih"]
+[gd_scene load_steps=29 format=3 uid="uid://diswxw0lgu6ih"]
 
 [ext_resource type="Texture2D" uid="uid://0cjay7yp0dit" path="res://assets/Sprites/spriteieieie/world_tileset.png" id="1_1pn4d"]
 [ext_resource type="Script" uid="uid://cww5tlx85pur8" path="res://scripts/compteur.gd" id="1_p6vls"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cuio2cvn4pomh" path="res://scenes/pickup_m.tscn" id="10_ax3dk"]
 [ext_resource type="PackedScene" uid="uid://c3f8tulomonup" path="res://scenes/pickup_s.tscn" id="11_q2dsb"]
 [ext_resource type="PackedScene" uid="uid://b87nb18ua0cf1" path="res://pickup.tscn" id="12_p3r0x"]
+[ext_resource type="FontFile" uid="uid://c74cbubwrc35u" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="13_q2dsb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wae8j"]
 texture = ExtResource("1_1pn4d")
@@ -318,6 +319,9 @@ _data = {
 &"haut_bas": SubResource("Animation_q2dsb")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_p3r0x"]
+font = ExtResource("13_q2dsb")
+
 [node name="Level_3" type="Node2D"]
 
 [node name="compteur" type="Node" parent="."]
@@ -470,3 +474,11 @@ position = Vector2(-370, -35)
 
 [node name="pickup_V" parent="." instance=ExtResource("12_p3r0x")]
 position = Vector2(-1850, -146)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -74.0
+offset_right = 149.0
+offset_bottom = -40.0
+text = "Level 3"
+label_settings = SubResource("LabelSettings_p3r0x")

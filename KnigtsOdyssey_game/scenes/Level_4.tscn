@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://csegmwarfv848"]
+[gd_scene load_steps=46 format=3 uid="uid://csegmwarfv848"]
 
 [ext_resource type="Script" uid="uid://cww5tlx85pur8" path="res://scripts/compteur.gd" id="1_ckxfy"]
 [ext_resource type="Texture2D" uid="uid://0cjay7yp0dit" path="res://assets/Sprites/spriteieieie/world_tileset.png" id="2_613hc"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cuio2cvn4pomh" path="res://scenes/pickup_m.tscn" id="11_r4d8x"]
 [ext_resource type="PackedScene" uid="uid://b87nb18ua0cf1" path="res://pickup.tscn" id="12_knkq4"]
 [ext_resource type="PackedScene" uid="uid://te7ws4ps6cel" path="res://scenes/fin.tscn" id="12_qrbrg"]
+[ext_resource type="PackedScene" uid="uid://dolm8t4syb1j0" path="res://scenes/coin.tscn" id="13_r4d8x"]
+[ext_resource type="FontFile" uid="uid://c74cbubwrc35u" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="14_knkq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj1an"]
 texture = ExtResource("2_613hc")
@@ -614,6 +616,9 @@ _data = {
 &"gauche_droite": SubResource("Animation_qh3ky")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_a5dd4"]
+font = ExtResource("14_knkq4")
+
 [node name="level_4" type="Node2D"]
 
 [node name="compteur" type="Node" parent="."]
@@ -821,6 +826,9 @@ libraries = {
 }
 autoplay = "gauche_droite"
 
+[node name="Coin7" parent="platformes/Platform_Sable8" instance=ExtResource("13_r4d8x")]
+position = Vector2(4, -11)
+
 [node name="Platform_Sable9" parent="platformes" instance=ExtResource("9_qh3ky")]
 position = Vector2(114, -134)
 
@@ -837,4 +845,35 @@ position = Vector2(872, -308)
 position = Vector2(264, -340)
 
 [node name="fin" parent="." instance=ExtResource("12_qrbrg")]
-position = Vector2(170, -31)
+position = Vector2(90, -87)
+
+[node name="coin" type="Node" parent="."]
+
+[node name="Coin" parent="coin" instance=ExtResource("13_r4d8x")]
+position = Vector2(424, -87)
+
+[node name="Coin2" parent="coin" instance=ExtResource("13_r4d8x")]
+position = Vector2(168, -23)
+
+[node name="Coin3" parent="coin" instance=ExtResource("13_r4d8x")]
+position = Vector2(792, -71)
+
+[node name="Coin4" parent="coin" instance=ExtResource("13_r4d8x")]
+position = Vector2(1106, -184)
+
+[node name="Coin5" parent="coin" instance=ExtResource("13_r4d8x")]
+position = Vector2(967, -296)
+
+[node name="Coin6" parent="coin" instance=ExtResource("13_r4d8x")]
+position = Vector2(520, -311)
+
+[node name="Coin8" parent="coin" instance=ExtResource("13_r4d8x")]
+position = Vector2(7, -183)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -70.0
+offset_top = -56.0
+offset_right = 30.0
+offset_bottom = -33.0
+text = "Level 4"
+label_settings = SubResource("LabelSettings_a5dd4")

@@ -1,11 +1,11 @@
 extends Node
 
-var score = 0
-
 @onready var label: Label = %Label
 
+func add_point():
+	Calcul.add_score(10)
+	label.text = str(Calcul.total_score)
 
-
-func add_point ():
-	score += 10
-	label.text = str(score) 
+func _ready() -> void:
+	Calcul.save_checkpoint()
+	label.text = str(Calcul.total_score)
