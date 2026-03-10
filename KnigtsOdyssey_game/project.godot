@@ -21,6 +21,8 @@ Calcul="*res://calcul.gd"
 
 [display]
 
+window/size/mode=2
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [input]
@@ -45,7 +47,7 @@ move_right={
 
 [physics]
 
-common/physics_ticks_per_second=150
+common/physics_ticks_per_second=240
 common/physics_interpolation=true
 
 [rendering]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://diswxw0lgu6ih"]
+[gd_scene load_steps=30 format=3 uid="uid://diswxw0lgu6ih"]
 
 [ext_resource type="Texture2D" uid="uid://0cjay7yp0dit" path="res://assets/Sprites/spriteieieie/world_tileset.png" id="1_1pn4d"]
 [ext_resource type="Script" uid="uid://cww5tlx85pur8" path="res://scripts/compteur.gd" id="1_p6vls"]
@@ -245,6 +245,9 @@ size = Vector2(16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha73p"]
 size = Vector2(48, 8)
 
+[sub_resource type="LabelSettings" id="LabelSettings_q2dsb"]
+font_size = 8
+
 [sub_resource type="Animation" id="Animation_56dhn"]
 length = 0.001
 tracks/0/type = "value"
@@ -428,6 +431,7 @@ offset_bottom = -5.494177
 theme_override_fonts/font = ExtResource("5_hhfj6")
 theme_override_font_sizes/font_size = 8
 text = "00"
+label_settings = SubResource("LabelSettings_q2dsb")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
