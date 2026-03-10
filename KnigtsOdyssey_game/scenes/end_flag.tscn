@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdmfac75twxhv"]
+
+[ext_resource type="Script" uid="uid://qe3smi1ei3qx" path="res://scripts/end_flag.gd" id="1_jk1va"]
+[ext_resource type="Texture2D" uid="uid://c0tlf8tps14po" path="res://assets/Vector/Tiles/sign_exit.svg" id="2_8s2b2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ee8w"]
+size = Vector2(8, 6)
+
+[node name="end_flag" type="Area2D"]
+script = ExtResource("1_jk1va")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.3841858e-07, 4.7683716e-07)
+scale = Vector2(0.13281253, 0.109375)
+texture = ExtResource("2_8s2b2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1ee8w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
