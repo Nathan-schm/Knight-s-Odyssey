@@ -81,8 +81,8 @@ pivot_offset = Vector2(1876, -237)
 script = ExtResource("1_45iu5")
 
 [node name="Fin" type="Sprite2D" parent="."]
-position = Vector2(715, 180.00002)
-scale = Vector2(0.7473959, 0.63378906)
+position = Vector2(717.49475, 180)
+scale = Vector2(0.75, 0.633789)
 texture = ExtResource("2_45iu5")
 offset = Vector2(-189.99304, 227.9938)
 
