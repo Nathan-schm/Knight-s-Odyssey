@@ -466,7 +466,7 @@ autoplay = "haut_bas"
 position = Vector2(-232, 9)
 
 [node name="pickup_S" parent="." instance=ExtResource("11_q2dsb")]
-position = Vector2(-370, -17)
+position = Vector2(-370, -35)
 
 [node name="pickup_V" parent="." instance=ExtResource("12_p3r0x")]
 position = Vector2(-1850, -146)

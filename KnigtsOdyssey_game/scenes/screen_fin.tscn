@@ -1,9 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://s66075f6xk76"]
+[gd_scene load_steps=15 format=3 uid="uid://dxgjux6nv6oa7"]
 
-[ext_resource type="Script" uid="uid://bojaycuk3516l" path="res://scripts/title_screen.gd" id="1_f0qvy"]
-[ext_resource type="Texture2D" uid="uid://bx36jaybx7v8k" path="res://assets/Sprites/Backgrounds/Default/moonho-seog-title-screen.jpg" id="2_rf8m1"]
+[ext_resource type="Script" uid="uid://bojaycuk3516l" path="res://scripts/title_screen.gd" id="1_os6j5"]
+[ext_resource type="Texture2D" uid="uid://bqmbeeyew4ihv" path="res://assets/fin.png" id="2_45iu5"]
+[ext_resource type="FontFile" uid="uid://c74cbubwrc35u" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_ddmca"]
+[ext_resource type="FontFile" uid="uid://kyida1c4cb" path="res://assets/fonts/Daydream DEMO.otf" id="4_ddmca"]
 
 [sub_resource type="FontVariation" id="FontVariation_rf8m1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bhmp"]
+font = ExtResource("3_ddmca")
+font_size = 50
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwb05"]
+font = ExtResource("4_ddmca")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_qf65s"]
 
@@ -51,7 +64,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="TitleScreen" type="Control"]
+[node name="screen_fin" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,26 +72,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1876, -237)
-script = ExtResource("1_f0qvy")
+script = ExtResource("1_os6j5")
 
-[node name="MoonhoSeogTitleScreen" type="Sprite2D" parent="."]
-modulate = Color(0.44, 0.44, 0.44, 0.30588236)
-position = Vector2(570.00006, 316.5)
-scale = Vector2(0.6, 0.59537035)
-texture = ExtResource("2_rf8m1")
+[node name="Fin" type="Sprite2D" parent="."]
+position = Vector2(715, 180.00002)
+scale = Vector2(0.7473959, 0.63378906)
+texture = ExtResource("2_45iu5")
+offset = Vector2(-189.99304, 227.9938)
 
-[node name="Label" type="Label" parent="."]
+[node name="titre" type="Label" parent="."]
 layout_mode = 0
-offset_left = 337.0
-offset_top = 128.0
-offset_right = 792.0
-offset_bottom = 227.0
+offset_left = 196.0
+offset_top = 121.0
+offset_right = 940.0
+offset_bottom = 190.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_rf8m1")
 theme_override_font_sizes/font_size = 64
-text = "Platfourmer"
+text = "Knight's Odyssey"
+label_settings = SubResource("LabelSettings_1bhmp")
+horizontal_alignment = 1
+
+[node name="sous-titre" type="Label" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 196.0
+offset_right = 1049.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_rf8m1")
+theme_override_font_sizes/font_size = 64
+text = "\"Slimes defeated. Spikes survived. 
+Worlds saved. Not bad for a knight in shiny armor.\""
+label_settings = SubResource("LabelSettings_qwb05")
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
@@ -92,7 +122,7 @@ theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_rf8m1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xkxti")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gwq6f")
-text = "Jouer"
+text = "Rejouer"
 
 [node name="QuitterButton" type="Button" parent="."]
 layout_mode = 0

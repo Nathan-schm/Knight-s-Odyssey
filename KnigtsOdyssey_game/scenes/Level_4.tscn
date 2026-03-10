@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cww5tlx85pur8" path="res://scripts/compteur.gd" id="1_ckxfy"]
 [ext_resource type="Texture2D" uid="uid://0cjay7yp0dit" path="res://assets/Sprites/spriteieieie/world_tileset.png" id="2_613hc"]
 [ext_resource type="PackedScene" uid="uid://ba4rlpalcxchi" path="res://killzone.tscn" id="3_1wcwq"]
-[ext_resource type="PackedScene" uid="uid://c33v1gkh5v5mn" path="res://scenes/boost.tscn" id="4_qh3ky"]
 [ext_resource type="PackedScene" uid="uid://s7am35eepeik" path="res://scenes/player.tscn" id="5_pnomx"]
 [ext_resource type="FontFile" uid="uid://cjwc8gdvhr7iq" path="res://assets/fonts/PixelOperator8.ttf" id="6_bm0eo"]
 [ext_resource type="PackedScene" uid="uid://cono5afxt7bnx" path="res://scenes/slime.tscn" id="7_1wcwq"]
@@ -12,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c3f8tulomonup" path="res://scenes/pickup_s.tscn" id="10_qrbrg"]
 [ext_resource type="PackedScene" uid="uid://cuio2cvn4pomh" path="res://scenes/pickup_m.tscn" id="11_r4d8x"]
 [ext_resource type="PackedScene" uid="uid://b87nb18ua0cf1" path="res://pickup.tscn" id="12_knkq4"]
+[ext_resource type="PackedScene" uid="uid://te7ws4ps6cel" path="res://scenes/fin.tscn" id="12_qrbrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj1an"]
 texture = ExtResource("2_613hc")
@@ -676,9 +676,6 @@ autoplay = "new_animation"
 position = Vector2(776, -460)
 shape = SubResource("RectangleShape2D_qrbrg")
 
-[node name="Boost" parent="." instance=ExtResource("4_qh3ky")]
-position = Vector2(88, -88)
-
 [node name="Player" parent="." instance=ExtResource("5_pnomx")]
 position = Vector2(72, -3)
 
@@ -828,7 +825,7 @@ autoplay = "gauche_droite"
 position = Vector2(114, -134)
 
 [node name="pickup_S" parent="." instance=ExtResource("10_qrbrg")]
-position = Vector2(423, -85)
+position = Vector2(615, -53)
 
 [node name="pickup_M" parent="." instance=ExtResource("11_r4d8x")]
 position = Vector2(823, -70)
@@ -838,3 +835,6 @@ position = Vector2(872, -308)
 
 [node name="pickup_V" parent="." instance=ExtResource("12_knkq4")]
 position = Vector2(264, -340)
+
+[node name="fin" parent="." instance=ExtResource("12_qrbrg")]
+position = Vector2(170, -31)

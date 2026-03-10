@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://te7ws4ps6cel"]
+
+[ext_resource type="Texture2D" uid="uid://bkajefc13ryn7" path="res://assets/Sprites/Tiles/Default/flag_red_a.png" id="1_70gu0"]
+[ext_resource type="Script" uid="uid://da1wn7hgfeha0" path="res://scenes/fin.gd" id="1_08607"]
+[ext_resource type="Texture2D" uid="uid://tckbwgm2j7a1" path="res://assets/Sprites/Tiles/Default/flag_red_b.png" id="2_08607"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24yaq"]
+size = Vector2(10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxfsg"]
+atlas = ExtResource("1_70gu0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4dr8"]
+atlas = ExtResource("2_08607")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxbsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxfsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4dr8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="fin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_08607")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_24yaq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15625, 0.22265625)
+sprite_frames = SubResource("SpriteFrames_sxbsd")
+autoplay = "default"
+frame_progress = 0.6947749
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
